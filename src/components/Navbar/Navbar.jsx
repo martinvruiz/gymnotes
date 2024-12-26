@@ -15,7 +15,7 @@ export const Navbar = ()=>{
                     <Link to="/notes" className="text-lg font-semibold">Notas</Link>
                 </li>
                 <li>
-                    <Link to="/help" className="text-lg font-semibold">Ayuda</Link>
+                    <Link to="/workout" className="text-lg font-semibold">Entrenamientos</Link>
                 </li>
             </ul>
         </nav>

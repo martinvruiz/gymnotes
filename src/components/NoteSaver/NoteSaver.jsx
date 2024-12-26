@@ -128,8 +128,7 @@ export const NoteSaver = ()=>{
                 type="number" 
                 name="sets" 
                 id="sets"
-                min={1}
-                max={4}
+                min={1} 
                 placeholder="Cantidad de sets"
                 value={formData.sets}
                 onChange={handleChange}
