@@ -3,10 +3,12 @@ import { Home } from "./pages/Home";
 import { Notes } from "./pages/Notes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Workout } from "./pages/Workout";
+import { GlobalProvider } from "./context/Context";
 
 
 function App() {
   return (
+    <GlobalProvider>
     <div>
       <BrowserRouter>
         <Navbar/>
@@ -17,6 +19,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </GlobalProvider>
   );
 }
 

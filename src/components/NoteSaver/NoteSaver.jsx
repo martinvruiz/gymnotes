@@ -1,22 +1,11 @@
-import { useState, useEffect } from "react";
+
+import { useGlobalContext } from "../../context/Context";
 
 
 export const NoteSaver = ()=>{
 
-    const [formData, setFormData] = useState({
-        date: "",
-        bodyPart: "",
-        exercises: "",
-        sets: 1,
-        reps: [""],
-    })
+    const { formData, setFormData, handleSubmit } = useGlobalContext();
 
-    useEffect(() => {
-        setFormData((prev) => ({
-            ...prev,
-            reps: Array(formData.sets).fill(""),
-        }));
-    }, [formData.sets]);
 
     const exercises = {
         pecho: ["press de banca", "hammer", "press inclinado", "mariposa", "cruces en polea", "press declinado"],
@@ -49,28 +38,13 @@ export const NoteSaver = ()=>{
         console.log(formData)
     }
 
-    const handleRepsChange = (index, value) => {
-        const updatedReps = [...formData.reps];
-        updatedReps[index] = value;
-        setFormData((prev) => ({
-            ...prev,
-            reps: updatedReps,
-        }));
+    const handleRepsChange = (index, field, value) => {
+        const updatedReps = formData.reps.map((set, i) =>
+            i === index ? { ...set, [field]: value } : set
+        );
+    
+        setFormData((prev) => ({ ...prev, reps: updatedReps }));
     };
-
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        
-        if(formData.date === "" || formData.bodyPart === "" || formData.exercises === ""){
-            alert("Completa todos los campos")
-            return
-        } else{
-            alert("Nota guardada")
-            
-            setFormData({ date: "", bodyPart: "", exercises: "", sets: 1, reps: [] })
-
-        }
-    }
 
 
     return <>
@@ -135,7 +109,7 @@ export const NoteSaver = ()=>{
                 className="w-full p-2 my-2 border border-gray-300 rounded-md"
                 />
 
-            {formData.reps.map((rep, index) => (
+            {formData.reps.map((set, index) => (
                 <div key={index} className="w-full flex items-center my-1">
                     <label htmlFor={`rep-${index}`}>
                         Set {index + 1}:
@@ -143,10 +117,19 @@ export const NoteSaver = ()=>{
                     <input
                         type="number"
                         id={`rep-${index}`}
-                        value={rep}
-                        onChange={(e) => handleRepsChange(index, e.target.value)}
+                        value={set.reps}
+                        onChange={(e) => handleRepsChange(index, "reps" ,e.target.value)}
                         className="w-full p-2 border border-gray-300 rounded-md"
                         placeholder={`Reps del set ${index + 1}`}
+                        min="0"
+                    />
+                    <input
+                        type="number"
+                        id={`kg-${index}`}
+                        value={set.kg}
+                        onChange={(e) => handleRepsChange(index, "kg" ,e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md"
+                        placeholder={`KG ${index + 1}`}
                         min="0"
                     />
                 </div>
