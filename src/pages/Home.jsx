@@ -7,7 +7,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full h-screen">
+      <div className="flex flex-col mt-2 items-center w-full h-full">
         <div className="flex flex-col md:flex-row w-full shadow-lg">
           <div className="w-full my-2 text-center flex flex-col items-center justify-center">
             <h1 className="text-xl lg:text-4xl font-bold">Gym Notes</h1>
