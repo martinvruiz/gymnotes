@@ -9,7 +9,7 @@ export const Home = () => {
     <>
       <div className="flex flex-col items-center w-full h-screen">
         <div className="flex flex-col md:flex-row w-full shadow-lg">
-          <div className="w-full text-center flex flex-col items-center justify-center">
+          <div className="w-full my-2 text-center flex flex-col items-center justify-center">
             <h1 className="text-xl lg:text-4xl font-bold">Gym Notes</h1>
             <p className="w-3/4 mt-2 p-2">
               Donde podes controlar tu progreso, sin preocupaciones y de la
@@ -22,11 +22,11 @@ export const Home = () => {
               Comenzar
             </Link>
           </div>
-          <div className="w-3/4 ">
+          <div className="h-72 md:w-full">
             <img
               src={gimImg}
               alt={gimImg}
-              className="object-cover w-full max-h-full"
+              className="max-h-full w-full object-cover"
             />
           </div>
         </div>
