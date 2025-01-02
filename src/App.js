@@ -19,7 +19,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-      <ToastContainer position="center" />
+      <ToastContainer position="" />
     </GlobalProvider>
   );
 }

@@ -58,7 +58,7 @@ export const GlobalProvider = ({ children }) => {
       const update = [...workouts, newFormData];
       setWorkouts(update);
       localStorage.setItem("workout", JSON.stringify(update));
-      toast.success("Guardado!");
+      toast.success("Guardado!", { position: "top-center", autoClose: 2000 });
       setFormData({
         date: "",
         id: "",
@@ -106,6 +106,7 @@ export const GlobalProvider = ({ children }) => {
       </div>,
       {
         closeButton: false,
+        position: "top-center",
       }
     );
   };
