@@ -14,7 +14,7 @@ export const WorkoutSelect = ({value, onChange}) => {
 
     return <>
     
-        <select name="bodypart" value={value} onChange={onChange} id="" className="m-2 p-2 border border-slate-500 rounded-md shadow-md text-center">
+        <select name="bodypart" value={value} onChange={onChange} id="" className="m-2 p-2 border border-orange-500 rounded-md shadow-md text-center">
             <option value="">Todos los ejercicios</option>
             {
                 bodypart.map((part, index) => {

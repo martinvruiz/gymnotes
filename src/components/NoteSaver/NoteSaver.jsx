@@ -52,7 +52,7 @@ export const NoteSaver = ()=>{
         <h3 className="mt-4 font-bold lg:text-2xl">Guardar Nota</h3>
 
         <form 
-            className="flex flex-col items-center w-3/4 lg:w-1/3 border border-gray-300 rounded-md p-3 shadow-md"
+            className="flex flex-col items-center w-3/4 lg:w-1/3 border border-orange-300 rounded-md p-3 shadow-md"
             onSubmit={handleSubmit}
             >
 
@@ -137,7 +137,7 @@ export const NoteSaver = ()=>{
 
             <button 
                 type="submit"
-                className="w-full p-2 my-2 bg-blue-500 text-white rounded-md"
+                className="w-full p-2 my-2 bg-orange-500 text-white rounded-md"
                 >
                     Guardar
             </button>
