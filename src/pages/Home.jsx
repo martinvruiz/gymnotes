@@ -22,7 +22,7 @@ export const Home = () => {
               Comenzar
             </Link>
           </div>
-          <div className="h-72 md:w-full">
+          <div className="md:w-full">
             <img
               src={gimImg}
               alt={gimImg}
